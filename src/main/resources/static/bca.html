@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BCA Programs</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+body{
+background:#eef4ff;
+}
+.hero{
+height:55vh;
+background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url('https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1600');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+.hero h1{
+font-size:70px;
+font-weight:800;
+margin-bottom:20px;
+}
+.hero p{
+font-size:20px;
+max-width:850px;
+line-height:1.9;
+}
+.container{
+width:90%;
+max-width:1400px;
+margin:auto;
+padding:80px 0;
+}
+.title{
+text-align:center;
+margin-bottom:60px;
+}
+.title h2{
+font-size:50px;
+color:#07162f;
+margin-bottom:15px;
+}
+.title p{
+color:#555;
+font-size:17px;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
+}
+.card{
+background:white;
+border-radius:30px;
+overflow:hidden;
+box-shadow:0 20px 45px rgba(0,0,0,0.08);
+transition:.4s;
+}
+.card:hover{
+transform:translateY(-12px);
+}
+.card img{
+width:100%;
+height:230px;
+object-fit:cover;
+}
+.content{
+padding:30px;
+}
+.content h3{
+font-size:30px;
+color:#07162f;
+margin-bottom:15px;
+}
+.content p{
+line-height:1.8;
+color:#555;
+margin-bottom:25px;
+}
+.info{
+display:flex;
+justify-content:space-between;
+margin-bottom:25px;
+font-weight:600;
+color:#07162f;
+}
+.btn{
+display:inline-block;
+padding:14px 28px;
+background:linear-gradient(135deg,#0d6efd,#6610f2);
+color:white;
+text-decoration:none;
+border-radius:50px;
+font-weight:600;
+}
+.back{
+text-align:center;
+margin-top:70px;
+}
+@media(max-width:768px){
+.hero h1{
+font-size:45px;
+}
+.title h2{
+font-size:38px;
+}
+}
+</style>
+</head>
+<body>
+<div class="hero">
+<div>
+<h1>BCA Programs</h1>
+<p>Learn modern computer applications with coding, AI, cloud technology and app development.</p>
+</div>
+</div>
+<div class="container">
+<div class="title">
+<h2>BCA Specializations</h2>
+<p>Build your IT career with industry-ready BCA programs.</p>
+</div>
+<div class="grid">
+<div class="card">
+<img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1200">
+<div class="content">
+<h3>Full Stack Development</h3>
+<p>HTML, CSS, JavaScript, React, Node.js and database management systems.</p>
+<div class="info">
+<span>Duration: 3 Years</span>
+<span>₹65,000/Yr</span>
+</div>
+<a href="#" class="btn">Apply Now</a>
+</div>
+</div>
+<div class="card">
+<img src="https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=1200">
+<div class="content">
+<h3>AI & ML</h3>
+<p>Artificial Intelligence, Machine Learning, neural networks and smart systems.</p>
+<div class="info">
+<span>Duration: 3 Years</span>
+<span>₹72,000/Yr</span>
+</div>
+<a href="#" class="btn">Apply Now</a>
+</div>
+</div>
+<div class="card">
+<img src="https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200">
+<div class="content">
+<h3>Cloud Computing</h3>
+<p>Cloud infrastructure, AWS, virtualization and scalable application hosting.</p>
+<div class="info">
+<span>Duration: 3 Years</span>
+<span>₹70,000/Yr</span>
+</div>
+<a href="#" class="btn">Apply Now</a>
+</div>
+</div>
+<div class="card">
+<img src="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=1200">
+<div class="content">
+<h3>Mobile App Development</h3>
+<p>Android, iOS, Flutter and cross-platform mobile application development.</p>
+<div class="info">
+<span>Duration: 3 Years</span>
+<span>₹68,000/Yr</span>
+</div>
+<a href="#" class="btn">Apply Now</a>
+</div>
+</div>
+</div>
+<div class="back">
+<a href="index.html" class="btn">← Back To Home</a>
+</div>
+</div>
+</body>
+</html>

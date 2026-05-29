@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Apna College | Premium Campus Website</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --primary:#07162f;
+    --secondary:#0d6efd;
+    --light:#f4f7ff;
+    --white:#ffffff;
+    --dark:#101828;
+    --text:#5b6577;
+    --gradient:linear-gradient(135deg,#0d6efd,#6610f2);
+    --shadow:0 20px 50px rgba(0,0,0,0.10);
+}
+
+body{
+    background:var(--light);
+    color:var(--dark);
+    overflow-x:hidden;
+}
+
+/* TOPBAR */
+html{
+    scroll-padding-top:120px;
+}
+.topbar{
+    background:#031126;
+    color:white;
+    padding:12px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.topbar-left{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.topbar-left span{
+    font-size:14px;
+}
+
+.topbar-right a{
+    color:white;
+    text-decoration:none;
+    margin-left:14px;
+    padding:9px 18px;
+    border-radius:40px;
+    transition:.3s;
+    font-size:14px;
+    border:1px solid rgba(255,255,255,0.2);
+}
+
+.topbar-right a:hover{
+    background:white;
+    color:var(--primary);
+}
+
+/* HEADER */
+
+header{
+    width:100%;
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(14px);
+    box-shadow:0 2px 20px rgba(0,0,0,0.06);
+}
+
+.navbar{
+    width:90%;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+    flex-wrap:wrap;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.logo-circle{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:var(--gradient);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:24px;
+    font-weight:800;
+    box-shadow:0 10px 25px rgba(13,110,253,0.4);
+}
+
+.logo-text h2{
+    color:var(--primary);
+    font-size:30px;
+    font-weight:800;
+}
+
+.logo-text p{
+    color:var(--text);
+    font-size:13px;
+}
+
+/* MENU */
+
+.menu{
+    display:flex;
+    list-style:none;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.menu li{
+    position:relative;
+}
+
+.menu li a{
+    text-decoration:none;
+    color:var(--dark);
+    padding:14px 18px;
+    display:block;
+    font-size:15px;
+    font-weight:600;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.menu li a:hover{
+    background:var(--gradient);
+    color:white;
+}
+
+/* DROPDOWN */
+
+.dropdown{
+    position:absolute;
+    top:110%;
+    left:0;
+    width:280px;
+    background:white;
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(10px);
+    transition:.3s;
+    z-index:999;
+}
+
+.dropdown a{
+    padding:15px 20px !important;
+    border-bottom:1px solid #eee;
+    border-radius:0 !important;
+    font-size:14px !important;
+}
+
+.dropdown a:hover{
+    background:#eef4ff !important;
+    color:#0d6efd !important;
+    padding-left:28px !important;
+}
+
+.menu li:hover .dropdown{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(3,12,32,0.75),rgba(3,12,32,0.75)),
+    url('https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1800');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    padding:0 6%;
+    position:relative;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:rgba(13,110,253,0.15);
+    border-radius:50%;
+    filter:blur(100px);
+    top:-150px;
+    right:-150px;
+}
+
+.hero-content{
+    max-width:780px;
+    color:white;
+    position:relative;
+    z-index:1;
+    animation:fadeUp 1s ease;
+}
+
+.hero-content span{
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.15);
+    padding:12px 24px;
+    border-radius:40px;
+    display:inline-block;
+    margin-bottom:28px;
+    backdrop-filter:blur(10px);
+    font-size:14px;
+}
+
+.hero-content h1{
+    font-size:78px;
+    line-height:1.15;
+    margin-bottom:25px;
+    font-weight:900;
+}
+
+.hero-content p{
+    font-size:19px;
+    line-height:1.9;
+    margin-bottom:38px;
+    color:#e6e6e6;
+}
+
+.hero-btns{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:18px 36px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    border:none;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.btn-primary{
+    background:var(--gradient);
+    color:white;
+    box-shadow:0 15px 35px rgba(13,110,253,0.4);
+}
+
+.btn-primary:hover{
+    transform:translateY(-5px);
+}
+
+.btn-outline{
+    border:2px solid white;
+    color:white;
+    background:transparent;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:var(--primary);
+}
+
+/* STATS */
+
+.stats{
+    width:90%;
+    margin:auto;
+    margin-top:-90px;
+    position:relative;
+    z-index:10;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+}
+
+.stat-card{
+    background:white;
+    padding:40px;
+    border-radius:30px;
+    box-shadow:var(--shadow);
+    text-align:center;
+    transition:.4s;
+}
+
+.stat-card:hover{
+    transform:translateY(-12px);
+}
+
+.stat-card i{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    background:var(--gradient);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    margin-bottom:24px;
+    font-size:30px;
+}
+
+.stat-card h2{
+    font-size:42px;
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+/* SECTION */
+
+section{
+    padding:100px 6%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:50px;
+    color:var(--primary);
+    margin-bottom:16px;
+    font-weight:800;
+}
+
+.section-title p{
+    color:var(--text);
+    max-width:760px;
+    margin:auto;
+    line-height:1.9;
+}
+
+/* NOTICE */
+
+.notice-wrapper{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+}
+
+.notice-box{
+    background:white;
+    padding:40px;
+    border-radius:30px;
+    box-shadow:var(--shadow);
+}
+
+.notice-box h3{
+    margin-bottom:28px;
+    color:var(--primary);
+    font-size:30px;
+}
+
+.notice-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:20px 0;
+    border-bottom:1px solid #eee;
+}
+
+.notice-item:last-child{
+    border:none;
+}
+
+.notice-item i{
+    color:var(--secondary);
+    font-size:20px;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.gallery img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:28px;
+    transition:.4s;
+    box-shadow:var(--shadow);
+}
+
+.gallery img:hover{
+    transform:scale(1.04);
+}
+
+/* FACILITY */
+
+.facility-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.facility-card{
+    background:white;
+    border-radius:28px;
+    padding:40px;
+    box-shadow:var(--shadow);
+    transition:.4s;
+}
+
+.facility-card:hover{
+    transform:translateY(-10px);
+}
+
+.facility-card i{
+    width:75px;
+    height:75px;
+    background:var(--gradient);
+    border-radius:22px;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    margin-bottom:25px;
+}
+
+.facility-card h3{
+    margin-bottom:15px;
+    color:var(--primary);
+    font-size:24px;
+}
+
+.facility-card p{
+    color:var(--text);
+    line-height:1.9;
+}
+
+/* COURSES */
+
+#courses{
+    background:#eef4ff;
+}
+
+.courses-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+}
+
+.course-card{
+    background:white;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,0.08);
+    transition:.4s;
+}
+
+.course-card:hover{
+    transform:translateY(-12px);
+}
+
+.course-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+}
+
+.course-content{
+    padding:30px;
+}
+
+.course-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.course-top h3{
+    font-size:30px;
+    color:var(--primary);
+}
+
+.course-top span{
+    background:rgba(13,110,253,0.1);
+    color:#0d6efd;
+    padding:8px 16px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.course-content p{
+    color:var(--text);
+    line-height:1.9;
+    margin-bottom:30px;
+}
+
+.course-btn{
+    display:inline-block;
+    padding:14px 28px;
+    background:var(--gradient);
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.course-btn:hover{
+    transform:translateY(-4px);
+}
+
+/* QUICK LINKS */
+
+.quick-links{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+}
+
+.quick-link{
+    background:var(--gradient);
+    color:white;
+    text-decoration:none;
+    padding:28px;
+    border-radius:24px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    font-weight:600;
+    transition:.4s;
+}
+
+.quick-link:hover{
+    transform:translateY(-8px);
+}
+
+/* FOOTER */
+
+footer{
+    background:#031126;
+    color:white;
+    padding:90px 6% 30px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
+    margin-bottom:40px;
+}
+
+.footer-col h3{
+    margin-bottom:25px;
+    font-size:26px;
+}
+
+.footer-col p{
+    color:#d9d9d9;
+    line-height:1.9;
+    margin-bottom:14px;
+}
+
+.footer-col a{
+    display:block;
+    color:#d9d9d9;
+    margin-bottom:12px;
+    text-decoration:none;
+}
+
+.footer-col a:hover{
+    color:white;
+    padding-left:5px;
+}
+
+.social{
+    display:flex;
+    gap:15px;
+    margin-top:20px;
+}
+
+.social a{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.1);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+.social a:hover{
+    background:var(--secondary);
+}
+
+.copyright{
+    border-top:1px solid rgba(255,255,255,0.1);
+    text-align:center;
+    padding-top:25px;
+    color:#ccc;
+}
+
+/* VIDEO POPUP */
+
+.video-popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.92);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+    padding:20px;
+}
+
+.video-popup.active{
+    display:flex;
+}
+
+.video-container{
+    width:90%;
+    max-width:1100px;
+    position:relative;
+}
+
+.video-container video{
+    width:100%;
+    border-radius:25px;
+    box-shadow:0 25px 60px rgba(0,0,0,0.5);
+}
+
+.close-btn{
+    position:absolute;
+    top:-55px;
+    right:0;
+    color:white;
+    font-size:38px;
+    cursor:pointer;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+
+    .courses-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .notice-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .hero-content h1{
+        font-size:56px;
+    }
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .menu{
+        flex-direction:column;
+        width:100%;
+        margin-top:20px;
+    }
+
+    .dropdown{
+        position:relative;
+        width:100%;
+        opacity:1;
+        visibility:visible;
+        display:none;
+    }
+
+    .menu li:hover .dropdown{
+        display:block;
+    }
+
+    .hero{
+        text-align:center;
+    }
+
+    .hero-content h1{
+        font-size:42px;
+    }
+
+    .hero-btns{
+        justify-content:center;
+    }
+
+    .section-title h2{
+        font-size:36px;
+    }
+
+    .courses-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+
+<div class="topbar">
+
+<div class="topbar-left">
+<span><i class="fa-solid fa-envelope"></i> info@apnacollege.com</span>
+<span><i class="fa-solid fa-phone"></i> +91 9000000000</span>
+<span><i class="fa-solid fa-location-dot"></i> Bihar, India</span>
+</div>
+
+<div class="topbar-right">
+<a href="#"><i class="fa-solid fa-user"></i> Web Login</a>
+<a href="#"><i class="fa-solid fa-graduation-cap"></i> ERP Login</a>
+</div>
+
+</div>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+
+<div class="logo-circle">AC</div>
+
+<div class="logo-text">
+<h2>Apna College</h2>
+<p>Official College Website</p>
+</div>
+
+</div>
+
+<!-- MENU -->
+
+<ul class="menu">
+
+<li><a href="#">Home</a></li>
+
+<li>
+<a href="#">About</a>
+<div class="dropdown">
+<a href="#">About College</a>
+<a href="#">Vision & Mission</a>
+<a href="#">Faculty</a>
+<a href="#">Campus Layout</a>
+</div>
+</li>
+
+<li>
+<a href="#">Academics</a>
+<div class="dropdown">
+<a href="#">Departments</a>
+
+<!-- SMOOTH SCROLL -->
+
+<a href="#courses">Course Offer</a>
+
+<a href="#">Academic Calendar</a>
+</div>
+</li>
+
+<li>
+<a href="#">Facilities</a>
+<div class="dropdown">
+<a href="#">Library</a>
+<a href="#">Labs</a>
+<a href="#">Hostel</a>
+<a href="#">Smart Classes</a>
+</div>
+</li>
+
+<li><a href="#">Contact</a></li>
+
+</ul>
+
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<span>WELCOME TO APNA COLLEGE</span>
+
+<h1>Build Your Future With Quality Education</h1>
+
+<p>
+Modern smart campus with digital classrooms,
+advanced labs and placement support.
+</p>
+
+<div class="hero-btns">
+
+<a href="#" class="btn btn-primary">
+<i class="fa-solid fa-user-graduate"></i>
+New Admission
+</a>
+
+<!-- VIDEO BUTTON -->
+<button class="btn btn-outline" onclick="openVideo()">
+<i class="fa-solid fa-circle-play"></i>
+Explore Campus
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- STATS -->
+
+<div class="stats">
+
+<div class="stats-grid">
+
+<div class="stat-card">
+<i class="fa-solid fa-users"></i>
+<h2>1000+</h2>
+<p>Students</p>
+</div>
+
+<div class="stat-card">
+<i class="fa-solid fa-book-open"></i>
+<h2>20+</h2>
+<p>Courses</p>
+</div>
+
+<div class="stat-card">
+<i class="fa-solid fa-chalkboard-user"></i>
+<h2>100+</h2>
+<p>Faculty</p>
+</div>
+
+<div class="stat-card">
+<i class="fa-solid fa-award"></i>
+<h2>100%</h2>
+<p>Placement Support</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- NOTICE -->
+
+<section>
+
+<div class="section-title">
+<h2>Latest Notice & Updates</h2>
+<p>Stay updated with latest examination and admission notice.</p>
+</div>
+
+<div class="notice-wrapper">
+
+<div class="notice-box">
+
+<h3>Latest Notice</h3>
+
+<div class="notice-item">
+<i class="fa-solid fa-bell"></i>
+<p>Admission Open for Session 2026-27</p>
+</div>
+
+<div class="notice-item">
+<i class="fa-solid fa-bell"></i>
+<p>Semester Exam Form Fill-up Started</p>
+</div>
+
+<div class="notice-item">
+<i class="fa-solid fa-bell"></i>
+<p>Scholarship Verification Last Date</p>
+</div>
+
+</div>
+
+<div class="notice-box">
+
+<h3>Important Announcement</h3>
+
+<div class="notice-item">
+<i class="fa-solid fa-circle-check"></i>
+<p>Campus Interview Next Week</p>
+</div>
+
+<div class="notice-item">
+<i class="fa-solid fa-circle-check"></i>
+<p>Workshop on AI & Data Science</p>
+</div>
+
+<div class="notice-item">
+<i class="fa-solid fa-circle-check"></i>
+<p>New Smart Classroom Added</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section>
+
+<div class="section-title">
+<h2>College Gallery</h2>
+<p>Explore our beautiful campus and infrastructure.</p>
+</div>
+
+<div class="gallery">
+
+<img src="https://images.pexels.com/photos/207684/pexels-photo-207684.jpeg?auto=compress&cs=tinysrgb&w=1200">
+
+<img src="https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=1200">
+
+<img src="https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&w=1200">
+
+<img src="https://images.pexels.com/photos/159740/library-la-trobe-study-students-159740.jpeg?auto=compress&cs=tinysrgb&w=1200">
+
+</div>
+
+</section>
+
+<!-- FACILITIES -->
+
+<section>
+
+<div class="section-title">
+<h2>Campus Facilities</h2>
+<p>Premium facilities for smart learning environment.</p>
+</div>
+
+<div class="facility-grid">
+
+<div class="facility-card">
+<i class="fa-solid fa-book"></i>
+<h3>Modern Library</h3>
+<p>Digital learning resources and journals.</p>
+</div>
+
+<div class="facility-card">
+<i class="fa-solid fa-computer"></i>
+<h3>Advanced Lab</h3>
+<p>Fully equipped computer and science labs.</p>
+</div>
+
+<div class="facility-card">
+<i class="fa-solid fa-wifi"></i>
+<h3>Campus WiFi</h3>
+<p>High speed internet across campus.</p>
+</div>
+
+<div class="facility-card">
+<i class="fa-solid fa-hotel"></i>
+<h3>Hostel Facility</h3>
+<p>Safe hostel for boys and girls.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- COURSES -->
+
+<section id="courses">
+
+<div class="section-title">
+<h2>Our Premium Courses</h2>
+<p>Choose your dream course and build your career.</p>
+</div>
+
+<div class="courses-grid">
+
+<div class="course-card">
+<img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200">
+
+<div class="course-content">
+<div class="course-top">
+<h3>B.Tech</h3>
+<span>Engineering</span>
+</div>
+
+<p>AI, Data Science, Mechanical, Civil and modern engineering.</p>
+
+<a href="btech.html" class="course-btn">View Details</a>
+
+</div>
+</div>
+
+<div class="course-card">
+<img src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1200">
+
+<div class="course-content">
+<div class="course-top">
+<h3>BCA</h3>
+<span>Coding</span>
+</div>
+
+<p>Full Stack Development, Cloud Computing and AI.</p>
+
+<a href="bca.html" class="course-btn">View Details</a>
+
+</div>
+</div>
+
+<div class="course-card">
+<img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200">
+
+<div class="course-content">
+<div class="course-top">
+<h3>BBA</h3>
+<span>Business</span>
+</div>
+
+<p>Marketing, Finance and Business Analytics.</p>
+
+<a href="bba.html" class="course-btn">View Details</a>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- QUICK LINKS -->
+
+<section>
+
+<div class="section-title">
+<h2>Quick Links</h2>
+<p>Access important student services instantly.</p>
+</div>
+
+<div class="quick-links">
+
+<a href="#" class="quick-link">
+<i class="fa-solid fa-user-plus"></i>
+Admission Form
+</a>
+
+<a href="#" class="quick-link">
+<i class="fa-solid fa-credit-card"></i>
+Online Payment
+</a>
+
+<a href="#" class="quick-link">
+<i class="fa-solid fa-user"></i>
+Student Login
+</a>
+
+<a href="#" class="quick-link">
+<i class="fa-solid fa-file-lines"></i>
+Examination Result
+</a>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-grid">
+
+<div class="footer-col">
+
+<h3>About College</h3>
+
+<p>
+Apna College provides quality education and career opportunities.
+</p>
+
+<div class="social">
+
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+<a href="#"><i class="fab fa-youtube"></i></a>
+
+</div>
+
+</div>
+
+<div class="footer-col">
+
+<h3>Important Links</h3>
+
+<a href="#">Admission</a>
+<a href="#">Result</a>
+<a href="#">Scholarship</a>
+<a href="#">ERP Login</a>
+
+</div>
+
+<div class="footer-col">
+
+<h3>Contact</h3>
+
+<p><i class="fa-solid fa-phone"></i> +91 9800000000</p>
+
+<p><i class="fa-solid fa-envelope"></i> info@apnacollege.com</p>
+
+<p><i class="fa-solid fa-location-dot"></i> Bihar, India</p>
+
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 Apna College. All Rights Reserved.
+</div>
+
+</footer>
+
+<!-- SINGLE VIDEO POPUP -->
+
+<div class="video-popup" id="videoPopup">
+
+<div class="video-container">
+
+<div class="close-btn" onclick="closeVideo()">
+<i class="fa-solid fa-xmark"></i>
+</div>
+
+<!-- YOUR VIDEO FILE -->
+
+<video id="campusVideo" controls>
+	<source src="/apnacollege.mp4" type="video/mp4">
+
+
+</video>
+
+</div>
+
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+const popup = document.getElementById("videoPopup");
+const video = document.getElementById("campusVideo");
+
+function openVideo(){
+
+    popup.classList.add("active");
+
+    video.muted = false;
+
+    let playPromise = video.play();
+
+    if(playPromise !== undefined){
+        playPromise.then(() => {
+
+            console.log("Video Playing");
+
+        }).catch(error => {
+
+            console.log("Autoplay blocked:", error);
+
+        });
+    }
+}
+
+function closeVideo(){
+    popup.classList.remove("active");
+    video.pause();
+    video.currentTime = 0;
+}
+
+window.addEventListener("click", function(e){
+    if(e.target === popup){
+        closeVideo();
+    }
+});
+
+</script>
+
+</body>
+</html>

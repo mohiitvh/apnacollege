@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Admission Form</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins', sans-serif;
+        }
+
+        body{
+            background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
+            min-height:100vh;
+            padding:40px 15px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .container{
+            width:100%;
+            max-width:850px;
+        }
+
+        .form-card{
+            background:white;
+            border-radius:20px;
+            padding:40px;
+            box-shadow:0 15px 40px rgba(0,0,0,0.25);
+            animation:fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn{
+            from{
+                opacity:0;
+                transform:translateY(20px);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        .title{
+            text-align:center;
+            margin-bottom:30px;
+        }
+
+        .title h1{
+            color:#0f172a;
+            font-size:34px;
+            font-weight:700;
+        }
+
+        .title p{
+            color:#64748b;
+            margin-top:8px;
+            font-size:15px;
+        }
+
+        .msg{
+            background:#dcfce7;
+            color:#166534;
+            padding:12px;
+            border-radius:10px;
+            margin-bottom:20px;
+            font-weight:500;
+        }
+
+        .section{
+            margin-top:30px;
+        }
+
+        .section h3{
+            color:#0f172a;
+            margin-bottom:18px;
+            padding-bottom:8px;
+            border-bottom:2px solid #e2e8f0;
+            font-size:20px;
+        }
+
+        .grid{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:20px;
+        }
+
+        .input-box{
+            display:flex;
+            flex-direction:column;
+        }
+
+        .full{
+            grid-column:1 / 3;
+        }
+
+        label{
+            margin-bottom:8px;
+            color:#334155;
+            font-size:14px;
+            font-weight:500;
+        }
+
+        input,
+        select{
+            padding:14px;
+            border:1px solid #cbd5e1;
+            border-radius:12px;
+            outline:none;
+            font-size:15px;
+            transition:0.3s;
+            background:#f8fafc;
+        }
+
+        input:focus,
+        select:focus{
+            border-color:#2563eb;
+            background:white;
+            box-shadow:0 0 0 4px rgba(37,99,235,0.15);
+        }
+
+        input[type="file"]{
+            background:white;
+            padding:10px;
+        }
+
+        .btn-box{
+            margin-top:35px;
+            text-align:center;
+        }
+
+        button{
+            background:linear-gradient(135deg,#2563eb,#1d4ed8);
+            color:white;
+            border:none;
+            padding:15px 40px;
+            border-radius:12px;
+            font-size:16px;
+            font-weight:600;
+            cursor:pointer;
+            transition:0.3s;
+            box-shadow:0 10px 25px rgba(37,99,235,0.35);
+        }
+
+        button:hover{
+            transform:translateY(-3px);
+            box-shadow:0 15px 30px rgba(37,99,235,0.45);
+        }
+
+        .footer-text{
+            margin-top:25px;
+            text-align:center;
+            color:#94a3b8;
+            font-size:13px;
+        }
+
+        @media(max-width:768px){
+
+            .form-card{
+                padding:25px;
+            }
+
+            .grid{
+                grid-template-columns:1fr;
+            }
+
+            .full{
+                grid-column:auto;
+            }
+
+            .title h1{
+                font-size:26px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="form-card">
+
+        <div class="title">
+            <h1>Student Admission Form</h1>
+            <p>Fill all details carefully before submitting</p>
+        </div>
+
+        <div class="msg" th:if="${msg}">
+            <span th:text="${msg}"></span>
+        </div>
+
+        <form action="/admission" method="post" enctype="multipart/form-data">
+
+            <!-- PERSONAL DETAILS -->
+
+            <div class="section">
+
+                <h3>Personal Details</h3>
+
+                <div class="grid">
+
+                    <div class="input-box">
+                        <label>Student Name</label>
+                        <input type="text" name="name" placeholder="Enter Full Name" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Father Name</label>
+                        <input type="text" name="fname" placeholder="Enter Father Name" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Mother Name</label>
+                        <input type="text" name="mname" placeholder="Enter Mother Name" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Date of Birth</label>
+                        <input type="date" name="dob">
+                    </div>
+
+                    <div class="input-box">
+                        <label>Aadhar Number</label>
+                        <input type="number" name="aadhar" placeholder="Enter Aadhar Number">
+                    </div>
+
+                    <div class="input-box">
+                        <label>Category</label>
+
+                        <select name="category">
+                            <option>General</option>
+                            <option>OBC</option>
+                            <option>SC</option>
+                            <option>ST</option>
+                        </select>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- 10TH -->
+
+            <div class="section">
+
+                <h3>10th Details</h3>
+
+                <div class="grid">
+
+                    <div class="input-box">
+                        <label>10th Roll Number</label>
+                        <input type="number" name="t10roll" placeholder="Enter Roll Number">
+                    </div>
+
+                    <div class="input-box">
+                        <label>10th Marks</label>
+                        <input type="number" name="t10mark" placeholder="Enter Marks">
+                    </div>
+
+                    <div class="input-box full">
+                        <label>10th Percentage</label>
+                        <input type="number" step="0.01" name="t10per" placeholder="Enter Percentage">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- 12TH -->
+
+            <div class="section">
+
+                <h3>12th Details</h3>
+
+                <div class="grid">
+
+                    <div class="input-box">
+                        <label>12th Roll Number</label>
+                        <input type="number" name="t12roll" placeholder="Enter Roll Number">
+                    </div>
+
+                    <div class="input-box">
+                        <label>12th Marks</label>
+                        <input type="number" name="t12mark" placeholder="Enter Marks">
+                    </div>
+
+                    <div class="input-box full">
+                        <label>12th Percentage</label>
+                        <input type="number" step="0.01" name="t12per" placeholder="Enter Percentage">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ADDRESS -->
+
+            <div class="section">
+
+                <h3>Address Details</h3>
+
+                <div class="grid">
+
+                    <div class="input-box">
+                        <label>Village</label>
+                        <input type="text" name="village" placeholder="Enter Village">
+                    </div>
+
+                    <div class="input-box">
+                        <label>District</label>
+                        <input type="text" name="district" placeholder="Enter District">
+                    </div>
+
+                    <div class="input-box">
+                        <label>State</label>
+                        <input type="text" name="state" placeholder="Enter State">
+                    </div>
+
+                    <div class="input-box">
+                        <label>Pincode</label>
+                        <input type="number" name="pincode" placeholder="Enter Pincode">
+                    </div>
+
+                    <div class="input-box full">
+                        <label>Country</label>
+                        <input type="text" name="country" placeholder="Enter Country">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- COURSE -->
+
+            <div class="section">
+
+                <h3>Course Selection</h3>
+
+                <div class="grid">
+
+                    <div class="input-box full">
+
+                        <label>Select Course</label>
+
+                        <select name="choosecourse">
+                            <option>BCA</option>
+                            <option>BBA</option>
+                            <option>BSc</option>
+                            <option>BA</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- FILE UPLOAD -->
+
+            <div class="section">
+
+                <h3>Upload Documents</h3>
+
+                <div class="grid">
+
+                    <div class="input-box">
+                        <label>Upload Photo</label>
+                        <input type="file" name="photo" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Upload PDF Document</label>
+                        <input type="file" name="document" required>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- BUTTON -->
+
+            <div class="btn-box">
+                <button type="submit">Submit Admission</button>
+            </div>
+
+        </form>
+
+        <div class="footer-text">
+            © 2026 Student Admission Portal
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

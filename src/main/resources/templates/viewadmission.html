@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Admission</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            margin:40px;
+            background:#f2f2f2;
+        }
+
+        .card{
+            width:600px;
+            padding:20px;
+            border:1px solid #ccc;
+            border-radius:10px;
+            background:white;
+        }
+
+        img{
+            width:160px;
+            height:200px;
+            object-fit:cover;
+            border-radius:10px;
+        }
+
+        .btn{ 
+            margin:10px;
+            padding:10px 20px;
+            background:blue;
+            color:white;
+            text-decoration:none;
+            border-radius:5px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="card">
+
+    <h2>Student Admission Form</h2>
+
+    <hr>
+
+    <!-- PERSONAL DETAILS -->
+    <p><b>Name :</b> <span th:text="${admission.name}"></span></p>
+
+    <p><b>Father Name :</b> <span th:text="${admission.fname}"></span></p>
+
+    <p><b>Mother Name :</b> <span th:text="${admission.mname}"></span></p>
+
+    <p><b>DOB :</b> <span th:text="${admission.dob}"></span></p>
+
+    <p><b>Aadhar :</b> <span th:text="${admission.aadhar}"></span></p>
+
+    <p><b>Category :</b> <span th:text="${admission.category}"></span></p>
+
+    <hr>
+
+    <!-- EDUCATION -->
+    <h3>10th Details</h3>
+    <p><b>Roll :</b> <span th:text="${admission.t10roll}"></span></p>
+    <p><b>Marks :</b> <span th:text="${admission.t10mark}"></span></p>
+    <p><b>Percentage :</b> <span th:text="${admission.t10per}"></span></p>
+
+    <h3>12th Details</h3>
+    <p><b>Roll :</b> <span th:text="${admission.t12roll}"></span></p>
+    <p><b>Marks :</b> <span th:text="${admission.t12mark}"></span></p>
+    <p><b>Percentage :</b> <span th:text="${admission.t12per}"></span></p>
+
+    <hr>
+
+    <!-- ADDRESS -->
+    <h3>Address</h3>
+    <p><b>Village :</b> <span th:text="${admission.village}"></span></p>
+    <p><b>District :</b> <span th:text="${admission.district}"></span></p>
+    <p><b>State :</b> <span th:text="${admission.state}"></span></p>
+    <p><b>Pincode :</b> <span th:text="${admission.pincode}"></span></p>
+    <p><b>Country :</b> <span th:text="${admission.country}"></span></p>
+
+    <hr>
+
+    <!-- COURSE -->
+    <p><b>Course :</b> <span th:text="${admission.choosecourse}"></span></p>
+
+    <hr>
+
+    <!-- PHOTO -->
+    <p><b>Photo :</b></p>
+    <img th:src="@{'/photo/' + ${admission.id}}">
+
+    <br><br>
+
+    <!-- DOCUMENT -->
+    <p>
+        <b>Document :</b>
+        <span th:text="${admission.documentName}"></span>
+    </p>
+
+    <br>
+
+    <!-- VIEW PDF -->
+    <a class="btn"
+       th:href="@{'/document/' + ${admission.id}}"
+       target="_blank">
+
+        View PDF
+
+    </a>
+
+    <!-- DOWNLOAD MERGED PDF -->
+    <a class="btn"
+       th:href="@{'/download/' + ${admission.id}}">
+
+        Download Full PDF
+
+    </a>
+
+</div>
+
+</body>
+</html>
